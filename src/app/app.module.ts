@@ -4,6 +4,7 @@ import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditAlbumComponent } from './edit-album/edit-album.component';
 
 export const firebaseConfig =
 {
@@ -28,13 +30,15 @@ export const firebaseConfig =
     AboutComponent,
     MarketplaceComponent,
     AlbumDetailComponent,
-    AdminComponent
+    AdminComponent,
+    EditAlbumComponent
   ],
   imports: [
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
